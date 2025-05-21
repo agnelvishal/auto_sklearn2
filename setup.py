@@ -6,9 +6,9 @@ setup(
     description="Python 3.13 compatible version of auto-sklearn",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    author="Your Name",
-    author_email="your.email@example.com",
-    url="https://github.com/yourusername/auto-sklearn2",
+    author="Agnel Vishal",
+    author_email="agnelvishal@gmail.com",
+    url="https://github.com/agnelvishal/auto_sklearn2",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
