@@ -7,11 +7,17 @@ import os
 import time
 import logging
 from sklearn.base import BaseEstimator, ClassifierMixin
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
+from sklearn.ensemble import (
+    RandomForestClassifier, GradientBoostingClassifier, 
+    AdaBoostClassifier, ExtraTreesClassifier, BaggingClassifier
+)
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.svm import SVC, LinearSVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import GaussianNB, BernoulliNB, MultinomialNB
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis, LinearDiscriminantAnalysis
 from sklearn.model_selection import cross_val_score, StratifiedKFold
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
@@ -65,12 +71,26 @@ class AutoSklearnClassifier(BaseEstimator, ClassifierMixin):
             Dictionary with model name as key and model instance as value.
         """
         models = {
+            # Original models
             'random_forest': RandomForestClassifier(random_state=self.random_state, n_jobs=self.n_jobs),
             'gradient_boosting': GradientBoostingClassifier(random_state=self.random_state),
             'logistic_regression': LogisticRegression(random_state=self.random_state, max_iter=1000, n_jobs=self.n_jobs),
             'svc': SVC(random_state=self.random_state, probability=True),
             'knn': KNeighborsClassifier(n_jobs=self.n_jobs),
-            'mlp': MLPClassifier(random_state=self.random_state, max_iter=300)
+            'mlp': MLPClassifier(random_state=self.random_state, max_iter=300),
+            
+            # Additional models
+            'decision_tree': DecisionTreeClassifier(random_state=self.random_state),
+            'ada_boost': AdaBoostClassifier(random_state=self.random_state),
+            'extra_trees': ExtraTreesClassifier(random_state=self.random_state, n_jobs=self.n_jobs),
+            'bagging': BaggingClassifier(random_state=self.random_state, n_jobs=self.n_jobs),
+            'sgd': SGDClassifier(random_state=self.random_state, max_iter=1000, loss='log_loss'),
+            'linear_svc': LinearSVC(random_state=self.random_state, max_iter=1000, dual='auto'),
+            'gaussian_nb': GaussianNB(),
+            'bernoulli_nb': BernoulliNB(),
+            'multinomial_nb': MultinomialNB(),
+            'qda': QuadraticDiscriminantAnalysis(),
+            'lda': LinearDiscriminantAnalysis()
         }
         return models
     

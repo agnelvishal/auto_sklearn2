@@ -12,7 +12,7 @@ Auto-Sklearn2 is a lightweight, Python 3.11+ compatible alternative to the popul
 - **Automated Machine Learning**: Automatically selects the best model and preprocessing pipeline
 - **Classification and Regression**: Supports both classification and regression tasks
 - **Time-Limited Optimization**: Set a time budget for model selection
-- **Multiple Models**: Includes RandomForest, GradientBoosting, LogisticRegression, SVC, KNN, MLP, and more
+- **Extensive Model Selection**: Includes over 15 classification models and 20 regression models from scikit-learn
 - **Multiple Preprocessors**: Includes StandardScaler, MinMaxScaler, and RobustScaler
 - **Cross-Validation**: Uses cross-validation for model evaluation
 
@@ -82,12 +82,53 @@ for model_name, score in auto_sklearn.get_models_performance().items():
     print(f"{model_name}: {score:.4f}")
 ```
 
+## Available Models
+
+### Classification Models
+- RandomForestClassifier
+- GradientBoostingClassifier
+- LogisticRegression
+- SVC and LinearSVC
+- KNeighborsClassifier
+- MLPClassifier
+- DecisionTreeClassifier
+- AdaBoostClassifier
+- ExtraTreesClassifier
+- BaggingClassifier
+- SGDClassifier
+- GaussianNB, BernoulliNB, MultinomialNB
+- QuadraticDiscriminantAnalysis
+- LinearDiscriminantAnalysis
+- And more...
+
+### Regression Models
+- RandomForestRegressor
+- GradientBoostingRegressor
+- LinearRegression
+- Ridge, Lasso, ElasticNet
+- SVR and LinearSVR
+- KNeighborsRegressor
+- MLPRegressor
+- DecisionTreeRegressor
+- AdaBoostRegressor
+- ExtraTreesRegressor
+- BaggingRegressor
+- SGDRegressor
+- HuberRegressor
+- PoissonRegressor
+- GammaRegressor
+- TweedieRegressor
+- RANSACRegressor
+- KernelRidge
+- PLSRegression
+- And more...
+
 ## Differences from auto-sklearn
 
 Auto-Sklearn2 is a simplified version of auto-sklearn with the following differences:
 
 1. **No ConfigSpace Dependency**: Uses scikit-learn's built-in models and preprocessing methods
-2. **Fewer Models and Preprocessors**: Includes only the most common models and preprocessors
+2. **Python 3.11+ Compatible**: Works with the latest Python versions
 3. **No Meta-Learning**: Does not use meta-learning to warm-start the optimization
 4. **No Ensemble Building**: Does not build ensembles of models
 5. **Simpler Hyperparameter Optimization**: Uses cross-validation instead of Bayesian optimization

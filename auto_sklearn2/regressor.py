@@ -7,11 +7,21 @@ import os
 import time
 import logging
 from sklearn.base import BaseEstimator, RegressorMixin
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
-from sklearn.svm import SVR
+from sklearn.ensemble import (
+    RandomForestRegressor, GradientBoostingRegressor,
+    AdaBoostRegressor, ExtraTreesRegressor, BaggingRegressor
+)
+from sklearn.linear_model import (
+    LinearRegression, Ridge, Lasso, ElasticNet,
+    SGDRegressor, HuberRegressor, PoissonRegressor, GammaRegressor,
+    TweedieRegressor, RANSACRegressor
+)
+from sklearn.svm import SVR, LinearSVR
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.neural_network import MLPRegressor
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.kernel_ridge import KernelRidge
+from sklearn.cross_decomposition import PLSRegression
 from sklearn.model_selection import cross_val_score, KFold
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
@@ -69,6 +79,7 @@ class AutoSklearnRegressor(BaseEstimator, RegressorMixin):
             Dictionary with model name as key and model instance as value.
         """
         models = {
+            # Original models
             'random_forest': RandomForestRegressor(random_state=self.random_state, n_jobs=self.n_jobs),
             'gradient_boosting': GradientBoostingRegressor(random_state=self.random_state),
             'linear_regression': LinearRegression(n_jobs=self.n_jobs),
@@ -77,7 +88,22 @@ class AutoSklearnRegressor(BaseEstimator, RegressorMixin):
             'elastic_net': ElasticNet(random_state=self.random_state),
             'svr': SVR(),
             'knn': KNeighborsRegressor(n_jobs=self.n_jobs),
-            'mlp': MLPRegressor(random_state=self.random_state, max_iter=300)
+            'mlp': MLPRegressor(random_state=self.random_state, max_iter=300),
+            
+            # Additional models
+            'decision_tree': DecisionTreeRegressor(random_state=self.random_state),
+            'ada_boost': AdaBoostRegressor(random_state=self.random_state),
+            'extra_trees': ExtraTreesRegressor(random_state=self.random_state, n_jobs=self.n_jobs),
+            'bagging': BaggingRegressor(random_state=self.random_state, n_jobs=self.n_jobs),
+            'sgd': SGDRegressor(random_state=self.random_state, max_iter=1000),
+            'huber': HuberRegressor(max_iter=1000),
+            'poisson': PoissonRegressor(max_iter=1000),
+            'gamma': GammaRegressor(max_iter=1000),
+            'tweedie': TweedieRegressor(max_iter=1000),
+            'ransac': RANSACRegressor(random_state=self.random_state),
+            'linear_svr': LinearSVR(random_state=self.random_state, max_iter=1000, dual='auto'),
+            'kernel_ridge': KernelRidge(),
+            'pls': PLSRegression(n_components=2)
         }
         return models
     
