@@ -1,26 +1,28 @@
 Metadata-Version: 2.4
 Name: auto-sklearn2
-Version: 0.1.0
-Summary: Python 3.13 compatible version of auto-sklearn
-Home-page: https://github.com/yourusername/auto-sklearn2
-Author: Your Name
-Author-email: your.email@example.com
-Keywords: machine learning,auto-ml,automated machine learning,python 3.13
-Classifier: Development Status :: 3 - Alpha
+Version: 0.1.2
+Summary: Python 3.11+ compatible version of auto-sklearn
+Home-page: https://github.com/agnelvishal/auto_sklearn2
+Author: Agnel Vishal
+Author-email: agnelvishal@gmail.com
+Keywords: machine learning,auto-ml,automated machine learning,python 3.11,python 3.12,python 3.13
+Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Science/Research
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: BSD License
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
 Classifier: Programming Language :: Python :: 3.13
 Classifier: Topic :: Scientific/Engineering
 Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
-Requires-Python: >=3.13
+Requires-Python: >=3.11
 Description-Content-Type: text/markdown
-Requires-Dist: numpy>=2.0.0
-Requires-Dist: scipy>=1.15.0
-Requires-Dist: scikit-learn>=1.4.0
-Requires-Dist: pandas>=2.0.0
+Requires-Dist: numpy>=1.23.0
+Requires-Dist: scipy>=1.9.0
+Requires-Dist: scikit-learn>=1.2.0
+Requires-Dist: pandas>=1.5.0
 Dynamic: author
 Dynamic: author-email
 Dynamic: classifier
@@ -34,15 +36,15 @@ Dynamic: summary
 
 # Auto-Sklearn2
 
-A Python 3.13 compatible version of auto-sklearn for automated machine learning.
+A Python 3.11+ compatible version of auto-sklearn for automated machine learning.
 
 ## Overview
 
-Auto-Sklearn2 is a lightweight, Python 3.13 compatible alternative to the popular [auto-sklearn](https://github.com/automl/auto-sklearn) package. It provides automated machine learning capabilities without the dependency on ConfigSpace, which currently has compatibility issues with Python 3.13 and NumPy 2.0.
+Auto-Sklearn2 is a lightweight, Python 3.11+ compatible alternative to the popular [auto-sklearn](https://github.com/automl/auto-sklearn) package. It provides automated machine learning capabilities without the dependency on ConfigSpace, which currently has compatibility issues with newer Python versions and NumPy 2.0.
 
 ## Features
 
-- **Python 3.13 Compatible**: Works with the latest Python version
+- **Python 3.11+ Compatible**: Works with Python 3.11, 3.12, and 3.13
 - **Automated Machine Learning**: Automatically selects the best model and preprocessing pipeline
 - **Classification and Regression**: Supports both classification and regression tasks
 - **Time-Limited Optimization**: Set a time budget for model selection

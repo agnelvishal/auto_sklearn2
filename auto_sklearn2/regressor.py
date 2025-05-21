@@ -1,5 +1,5 @@
 """
-Auto-Sklearn2 Regressor - A Python 3.13 compatible version of auto-sklearn
+Auto-Sklearn2 Regressor - A Python 3.11+ compatible version of auto-sklearn
 """
 
 import numpy as np
@@ -22,7 +22,7 @@ logger = logging.getLogger('auto_sklearn2')
 
 class AutoSklearnRegressor(BaseEstimator, RegressorMixin):
     """
-    A simplified version of auto-sklearn for regression that works with Python 3.13
+    A simplified version of auto-sklearn for regression that works with Python 3.11+
     
     Parameters
     ----------

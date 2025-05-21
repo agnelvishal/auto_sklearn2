@@ -1,14 +1,14 @@
 # Auto-Sklearn2
 
-A Python 3.13 compatible version of auto-sklearn for automated machine learning.
+A Python 3.11+ compatible version of auto-sklearn for automated machine learning.
 
 ## Overview
 
-Auto-Sklearn2 is a lightweight, Python 3.13 compatible alternative to the popular [auto-sklearn](https://github.com/automl/auto-sklearn) package. It provides automated machine learning capabilities without the dependency on ConfigSpace, which currently has compatibility issues with Python 3.13 and NumPy 2.0.
+Auto-Sklearn2 is a lightweight, Python 3.11+ compatible alternative to the popular [auto-sklearn](https://github.com/automl/auto-sklearn) package. It provides automated machine learning capabilities without the dependency on ConfigSpace, which currently has compatibility issues with newer Python versions and NumPy 2.0.
 
 ## Features
 
-- **Python 3.13 Compatible**: Works with the latest Python version
+- **Python 3.11+ Compatible**: Works with Python 3.11, 3.12, and 3.13
 - **Automated Machine Learning**: Automatically selects the best model and preprocessing pipeline
 - **Classification and Regression**: Supports both classification and regression tasks
 - **Time-Limited Optimization**: Set a time budget for model selection
