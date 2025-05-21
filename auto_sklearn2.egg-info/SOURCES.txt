@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+setup.py
+auto_sklearn2/__init__.py
+auto_sklearn2/classifier.py
+auto_sklearn2/regressor.py
+auto_sklearn2.egg-info/PKG-INFO
+auto_sklearn2.egg-info/SOURCES.txt
+auto_sklearn2.egg-info/dependency_links.txt
+auto_sklearn2.egg-info/requires.txt
+auto_sklearn2.egg-info/top_level.txt
+tests/test_classifier.py
+tests/test_regressor.py
